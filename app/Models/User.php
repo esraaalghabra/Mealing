@@ -1,3 +1,4 @@
+
 <?php
 
 namespace App\Models;
@@ -41,7 +42,7 @@ class User extends Authenticatable implements MustVerifyEmail
     {
         return $this->hasMany(Ingredient::class);
     }
-    
+
     public function recipes()
     {
         return $this->hasMany(Recipe::class);
@@ -68,7 +69,7 @@ class User extends Authenticatable implements MustVerifyEmail
     {
         return $this->name;
     }
-    
+
     public function getAvatar($size = 36): string
     {
         return 'https://www.gravatar.com/avatar/' . md5($this->email) . '?s=' . $size;
